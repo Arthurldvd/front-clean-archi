@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tier List Master</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              200: '#bae6fd',
+              300: '#7dd3fc',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0c4a6e',
+            },
+          },
+        }
+      }
+    }
+  </script>
+  
+  <style type="text/tailwindcss">
+    @layer base {
+      body {
+        @apply bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 min-h-screen text-white;
+      }
+    }
+
+    @layer components {
+      .tier-s {
+        @apply bg-gradient-to-r from-red-500 to-pink-500;
+      }
+      .tier-a {
+        @apply bg-gradient-to-r from-orange-500 to-amber-500;
+      }
+      .tier-b {
+        @apply bg-gradient-to-r from-yellow-500 to-lime-500;
+      }
+      .tier-c {
+        @apply bg-gradient-to-r from-green-500 to-emerald-500;
+      }
+      .tier-d {
+        @apply bg-gradient-to-r from-blue-500 to-cyan-500;
+      }
+
+      .glass-card {
+        @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl shadow-2xl;
+      }
+    }
+  </style>
+  
+  <style>
+    @keyframes gradient {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    
+    @keyframes slide-in {
+      0% { transform: translateY(-10px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    
+    @keyframes fade-in {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    .animate-gradient {
+      background-size: 300% 300%;
+      animation: gradient 6s ease infinite;
+    }
+    
+    .animate-slide-in {
+      animation: slide-in 0.3s ease-out;
+    }
+    
+    .animate-fade-in {
+      animation: fade-in 0.2s ease-out;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
